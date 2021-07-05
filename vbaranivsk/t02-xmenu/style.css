@@ -1,0 +1,71 @@
+* {
+    transition: display 1s step-start
+}
+
+h1 {
+    text-align: center;
+}
+
+.options-container-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    border-radius: 5%;
+    width: 100px;
+    height: 20px;
+    outline: solid 1px black;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.option:hover {
+    opacity: 70%;
+}
+
+.options-container-1 > div > .option {
+    background-color: blue;
+}
+
+.options-container-2 > div > .option {
+    background-color:aquamarine;
+}
+
+.options-container-3 > .option {
+    background-color: rgb(211, 53, 53);
+}
+
+.options-container-2 {
+    display:none;
+    width: 100px
+}
+
+.options-container-3 {
+    display: none;
+}
+
+.double-container-2 {
+    display: flex;
+    height: 20px;
+    width:min-content;
+    position: relative;
+}
+
+.to-left .double-container-2:hover {
+    right:100%;
+    flex-direction:row-reverse;
+}
+
+.double-container-1:hover .options-container-2 {
+    display:block;
+    position: absolute;
+}
+
+.double-container-2:hover .options-container-3 {
+    display:block;
+}
+
+
+
+

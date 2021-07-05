@@ -1,0 +1,22 @@
+div {
+    display:flex;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height:2em
+}
+
+button {
+    color:green;
+    height: 100%;
+} button:hover {
+    color:red
+}
+
+input {
+    color:green;
+    width:100%;
+    border-color: blue;
+} input:hover {
+    color:red
+}

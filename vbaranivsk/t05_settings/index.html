@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <form action="">
+            <fieldset>
+                <legend>Typeface</legend>
+                <select>
+                    <option value="Acunim Pro" selected>Acunim Pro</option>
+                    <option value="Comic Sans">Comic Sans</option>
+                    <option value="Times New Roman" disabled>Times New Roman</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Dark UI</legend>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Weight</legend>
+                <label class="check-container">
+                    <input type="checkbox" class="check"/>
+                    <span>Bold</span>
+                </label>
+                <label class="check-container">
+                    <input type="checkbox" class="check"/>
+                    <span>Regular</span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Color</legend>
+                <div class="check-container">
+                    <input type="checkbox" class="check check-radio" style="background-color: red ;">
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" class="check check-radio" style="background-color: blue;">
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" class="check check-radio" style="background-color: green ;">
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" class="check check-radio" style="background-color: orange ;">
+                </div>
+                <div class="check-container">
+                    <input type="checkbox" class="check check-radio" style="background-color:yellow ;">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Size</legend>
+                <div class="a-container">
+                    <span id="small-a">A</span>
+                    <span id="big-a">A</span>
+                </div>
+                <input type="range">
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

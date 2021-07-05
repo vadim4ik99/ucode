@@ -1,0 +1,9 @@
+* {
+    transition: transform 1s 
+}
+
+.image:hover {
+    display: block;
+    animation: animation 1s;
+    transform: rotate(30deg);
+}

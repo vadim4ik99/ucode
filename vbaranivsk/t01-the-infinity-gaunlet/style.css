@@ -1,0 +1,27 @@
+.gaunlet {
+    background-image: url('assets/images/The-Infinity-Gauntlet.png');
+    background-repeat: no-repeat;
+    height:140px;
+    width:80px;
+    background-size: cover;
+}
+
+.gaunlet:hover ~ div .row:nth-child(odd) .human:nth-child(odd) {
+    background-image:none
+}
+
+.gaunlet:hover ~ div .row:nth-child(even) .human:nth-child(even) {
+    background-image:none
+}
+
+.human {
+    background-image: url('assets/images/man.png');
+    height:51px;
+    width:51px;
+    background-size: cover;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+}
