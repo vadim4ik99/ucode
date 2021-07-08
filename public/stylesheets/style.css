@@ -1,0 +1,31 @@
+canvas {
+	border: 1px solid black;
+	margin-top: 2vh;
+  	z-index: 0;
+}
+
+#game-canvas {
+    background-image: url(background3.jpg);
+    background-size: cover;
+    border: none;
+    box-shadow: inset 5px 5px 10px 10px  #ffffff;
+}
+#img img{
+    position: relative;
+    
+    width: 100px;
+}
+
+.play-guide {
+	margin: 5%;
+}
+
+@font-face {
+    font-family: "ChineseTakeaway";
+    src: url("../fonts/ChineseTakeaway.ttf");
+}
+
+@font-face {
+    font-family: "RagingRedLotusBB";
+    src: url("../fonts/RagingRedLotusBB.ttf");
+}

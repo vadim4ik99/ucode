@@ -1,0 +1,14 @@
+{
+  "name": "avengers-jitsu",
+  "description": "Simple game based on Rock, Scissors,Paper",
+  "author": "Ucode team",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.13.1",
+    "socket.io": "^1.4.4"
+  }
+}
