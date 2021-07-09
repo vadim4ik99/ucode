@@ -7,8 +7,8 @@ spacecats.addEventListener("ended", function() {
 
 var playing = false;
 
-//                 up      up      down    down    left    right    left    right   b       a       enter
-var konamiKeys = [38,     38,     40,     40,	   37,     39,      37,     39,     66,     65,     13];
+//                 up      up
+var konamiKeys = [38,     38];
 var konamiIndex = 0;
 
 $(document).keydown(function(e) {
