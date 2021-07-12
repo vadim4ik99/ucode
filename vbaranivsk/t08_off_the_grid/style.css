@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow:dense;
+}
+
+.grid img {
+    display: block;
+    height: 100%;
+}
+
+.height1 {
+    height: 250px;
+}
+
+.height2 {
+    height: 200px;
+}
+
+.height3 {
+    height: 400px;
+}

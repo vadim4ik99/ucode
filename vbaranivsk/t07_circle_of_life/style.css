@@ -1,0 +1,22 @@
+div {
+    width: 200px;
+    height: 200px;
+    border-radius:50%;
+    background-color: green;
+
+    position: relative;
+    animation: fly-around 5s infinite linear alternate;
+    
+    transition: background-color 0s;
+    transition-delay: 2s;
+}
+
+ div:hover {
+background-color: red;
+transition-delay: 0s;
+}
+
+@keyframes fly-around {
+    from {left: 0%}
+    to {left: 100%; transform: translateX(-100%);}
+}
