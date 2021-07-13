@@ -1,11 +1,14 @@
 let chooseAnimal = (str = '', hint = '') => {
   hint && console.log(hint)
   let animal = prompt("What animal is the superhero most similar to?", str);
-  if (animal.length <= 20) return animal
+  if (animal.length <= 20 && isNaN(animal)) return animal
   return chooseAnimal(animal, "Enter no more than 20 letters!")
 }
 
-let chooseGender = () => prompt("What gender are they?")
+let chooseGender = () => {
+  let gender = prompt("What gender are they?")
+  return (isNaN(gender) ? gender : prompt("What gender are they?"))
+}
 
   let chooseAge = (str = '', hint = '') => {
     hint && console.log(hint)
