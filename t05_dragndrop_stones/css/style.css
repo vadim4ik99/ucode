@@ -1,0 +1,40 @@
+.ball {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  border: gray solid 3px;
+  position: absolute;
+}
+
+.ball:nth-child(1) {
+  background-color: #ff0000;
+  left: 20vw;
+}
+
+.ball:nth-child(2) {
+  background-color: #15ff00;
+  left: 40vw;
+}
+
+.ball:nth-child(3) {
+  background-color: #002fff;
+  left: 50vw;
+  top: 20vh;
+}
+
+.ball:nth-child(4) {
+  background-color: #f700ff;
+  left: 60vw;
+}
+
+.ball:nth-child(5) {
+  background-color: #00fff2;
+  left: 80vw;
+}
+
+.ball:nth-child(6) {
+  background-color: #fffb02;
+  bottom: 40vh;
+  left: 40vw;
+}
+/*# sourceMappingURL=style.css.map */

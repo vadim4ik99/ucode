@@ -1,0 +1,55 @@
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 255, 0.2);
+          box-shadow: 2px 2px 5px 1px rgba(0, 0, 255, 0.2);
+}
+
+.container .header {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  border-radius: inherit;
+}
+
+.container .header span {
+  display: block;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.container .forecast-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.container .forecast-container .day {
+  width: 150px;
+  height: 250px;
+  margin: 5px;
+  border: 1px #e0e0e0 solid;
+  text-align: center;
+  font-size: 20px;
+}
+
+.container .forecast-container .day .sky {
+  height: 60%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+.container .forecast-container .day .date {
+  margin-top: 5px;
+}
+/*# sourceMappingURL=style.css.map */

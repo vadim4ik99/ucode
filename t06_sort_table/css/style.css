@@ -1,0 +1,50 @@
+table {
+  margin: 0 auto;
+  border: black solid 5px;
+}
+
+th {
+  cursor: pointer;
+  border: #fff solid 1px;
+  color: #fff;
+  background-color: #ff2c2c;
+  padding: 15px;
+}
+
+td {
+  cursor: default;
+  border: #fff solid 1px;
+  text-align: center;
+  padding: 15px;
+  background-color: #d6d6d6;
+}
+
+.notification {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #c0c0c0;
+  -webkit-animation: fade 3s;
+          animation: fade 3s;
+}
+
+@-webkit-keyframes fade {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
