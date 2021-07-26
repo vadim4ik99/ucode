@@ -1,7 +1,7 @@
 
 (greet = () => {
     String.prototype.capitalize = function() {
-        return this.charAt(0).toUpperCase() + this.slice(1);
+        return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
     }
     const firstName = prompt('Enter first name').capitalize()
     const lastName = prompt('Enter last name').capitalize()
