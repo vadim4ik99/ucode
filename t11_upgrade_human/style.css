@@ -1,0 +1,67 @@
+* {
+    text-align: center;
+    display: block;
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+}
+p {
+    border-radius: 5px;
+    padding: 2px;
+    margin: 10px;
+    border: 1px solid;
+}
+.prop-container {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    
+}
+.prop-container p {
+   text-align:left 
+}
+.methods-container p {
+    display: block;
+    border: 1px rgb(158, 152, 152) solid;
+    background-color: rgb(202, 202, 202);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.superhero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.superhero p {
+    margin: 20px;
+    width: 45vw
+}
+
+#become-hero {
+    width: 200px;
+    border: 2px red ridge;
+    color: red;
+    border-radius: 0;
+    margin: 0 auto;
+}
+
+#fight {
+    background-color: rgb(255, 140, 140);
+}
+
+#code {
+    background-color: rgb(140, 245, 114);
+}
