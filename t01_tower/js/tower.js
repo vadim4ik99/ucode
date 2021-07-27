@@ -28,9 +28,9 @@ class Tower extends Building {
     toString() {
         return [
             super.toString(), 
-            this.hasElevator.toString,
-            this.arcCapacity,
-            this.floorHeight
+            `Elevator: ${this.hasElevator ? '+' : '-'}`,
+            `Arc reactor capacity: ${this.arcCapacity}`,
+            `Floor height: ${this.floors}`
         ].join('\n')
     } 
 }
