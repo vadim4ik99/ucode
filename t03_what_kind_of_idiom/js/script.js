@@ -5,9 +5,13 @@ alert(
 
             case 2: return 'Goody 2-shoes'
 
-            case (3 || 6): return "Two's company, three's a crowd"
+            case 3: return "Two's company, three's a crowd"
 
-            case (4 || 9): return 'Counting sheep'
+            case 6: return "Two's company, three's a crowd"
+
+            case 4: return 'Counting sheep'
+
+            case 9: return 'Counting sheep'
 
             case 5: return 'Take five'
 
