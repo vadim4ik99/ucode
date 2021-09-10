@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+import {promisify} from 'util'
 
 export const signToken=  id =>{
 
@@ -30,4 +31,16 @@ export const signToken=  id =>{
       ...payload
     })
   
+  }
+
+  export async function jwtParser(req, res, next) {
+    let token
+    if(req.cookies.jwt) {
+      token= req.cookies.jwt
+    }
+    if(!token){
+      res.send('cookies doesnt contain token')
+    }
+    req.decoded=await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+    next()
   }

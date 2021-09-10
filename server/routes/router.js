@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 
 import loginRouter from './userRoutes/loginRouter.js'
 import userDataRouter from './userRoutes/userDataRouter.js'
+import { jwtParser } from '../utils/jwt.js'
 
 const router = express.Router()
 
