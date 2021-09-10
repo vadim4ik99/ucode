@@ -3,6 +3,7 @@ import {promisify} from 'util'
 import jwt from 'jsonwebtoken'
 
 export async function getUserData(req, res, next) {
+  //get and decode jsonwebtoken
     let token
     if(req.cookies.jwt) {
       token= req.cookies.jwt
@@ -22,11 +23,11 @@ export async function setUserData(req, res) {
       token= req.cookies.jwt
     }
     if(!token){
-      res.send('not signed')
+      res.send()
     }
     const decoded=await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+    
     const data = req.body
-
     User.updateOne({_id: decoded.id}, {
         $set: { data }
     }).then(async ()=> console.log(await User.findById(decoded.id)))
