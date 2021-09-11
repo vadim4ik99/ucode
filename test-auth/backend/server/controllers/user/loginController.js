@@ -4,7 +4,7 @@ import isEmail from 'isemail'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 
-import {createAndSendToken} from '../../utils/jwt.js'
+import {addJwtCookie} from '../../utils/jwt.js'
 
 dotenv.config({path: './server/.env'})
 
@@ -15,7 +15,7 @@ export const signUp = async (req, res) => {
   //check if user exists
   let user = await User.findOne({ username });
   if (user) {
-    return res.redirect("/register");
+    return res.status(400).send('User already exists');
   }
 
   //create user
@@ -30,7 +30,9 @@ export const signUp = async (req, res) => {
   });
   await user.save();
 
-  createAndSendToken(user, 200, res, {redirect: "/login"})
+  addJwtCookie(res, user._id)
+
+  res.status(200).send('Sign up successful')
 };
 
 
@@ -42,20 +44,22 @@ export const login = async (req, res) => {
   if (isEmail.validate(username, {errorLevel: false}) == true) user = await User.findOne({ email: username });
   else user = await User.findOne({username})
   if (!user) {
-    return res.send({redirect: "/login"});
+    return res.status(400).send('User doesn\'t exist');
   }
 
   //check password
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    return res.send({redirect: "/login"});
+    return res.status(401).send('Password incorrect');
   }
 
-  createAndSendToken(user, 200, res, {redirect: "/profile"})
+  addJwtCookie(res, user._id)
+
+  res.status(200).send('Log in successful')
 };
 
 
 export const logout  = (req, res) => {
   res.clearCookie('jwt')
-  res.send({redirect: "/login"});
+  res.status(200).send('Log out successful');
 };

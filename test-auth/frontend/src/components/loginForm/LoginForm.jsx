@@ -41,9 +41,12 @@ function LoginForm() {
                             <input type="text" onChange={(e) => setPassword(e.target.value)} />
                         </label>
                         <input type="button" value="sign in" onClick={async () => {
-                            const res = await login(credentials)
-                            
-                            history.push(res.redirect)
+                            await login(credentials)
+                            .then((res) => {
+                                console.log(res)
+                                history.push('/profile')
+                            })
+                            .catch(err => console.log(err.message))
                         }}
                         />
                         <a onClick={toggleMode} style={{color: '#008CB4'}}>register</a>
@@ -56,18 +59,24 @@ function LoginForm() {
                             <span>username</span>
                             <input type="text" onChange={(e) => setUsername(e.target.value)} />
                         </label>
+
                         <label>
                             <span>password</span>
                             <input type="text" onChange={(e) => setPassword(e.target.value)} />
                         </label>
+
                         <label>
                             <span>email</span>
                             <input type="text" onChange={(e) => setEmail(e.target.value)} />
                         </label>
+                
                         <input type="button" value="sign up" onClick={async () => {
-                            const res = await register(credentials)
-                            history.push(res.redirect)
+                            await register(credentials).then((res) => {
+                                console.log(res)
+                            })
+                            .catch(err => console.log(err.message))
                         }} />
+
                         <a onClick={toggleMode} style={{color: '#008CB4'}}>login</a>
                     </div>
                 )

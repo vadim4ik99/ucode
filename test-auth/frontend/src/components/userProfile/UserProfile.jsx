@@ -30,8 +30,10 @@ function UserProfile() {
       }}>Click me!</button>
 
       <button onClick={async () => {
-        const res = await logout()
-        history.push(res.redirect)
+        const res = await logout().then((res) => {
+          console.log(res)
+          history.push('/login')
+        })
         }} >logout</button>
     </div>
   )
