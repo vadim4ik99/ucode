@@ -50,7 +50,7 @@ export const login = async (req, res) => {
   //check password
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    return res.status(400).send('Password incorrect');
+    return res.status(401).send('Password incorrect');
   }
 
   addJwtCookie(res, user._id)
