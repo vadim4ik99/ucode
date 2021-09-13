@@ -3,10 +3,11 @@ import bcrypt from 'bcryptjs'
 import isEmail from 'isemail'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
+import mailto from '../../configs/mailto.js'
 
-import {addJwtCookie} from '../../utils/jwt.js'
+import { addJwtCookie } from '../../utils/jwt.js'
 
-dotenv.config({path: './server/.env'})
+dotenv.config({ path: './server/.env' })
 
 
 export const signUp = async (req, res) => {
@@ -30,9 +31,16 @@ export const signUp = async (req, res) => {
   });
   await user.save();
 
-  addJwtCookie(res, user._id)
+  //send email link token
+  let token_mail_verification = addJwtCookie(res, user._id);
+  let link = `Clik on link to continued registration http://localhost:5000/users/verify?"${token_mail_verification}`;
+  let linkhtml = `Clik on link to continued registration <a href src="localhost:5000/users/verify?id=${token_mail_verification}">Link</a><br>
+  Clik on link to continued registration http://localhost:5000/verify?id=${token_mail_verification}`;
+  mailto(email, link, linkhtml);
 
-  res.status(200).send('Sign up successful')
+  //addJwtCookie(res, user._id)
+
+  res.status(200).send('Sign up successful');
 };
 
 
@@ -40,9 +48,9 @@ export const login = async (req, res) => {
   const { username, password } = req.body;
 
   //find user
-  let user 
-  if (isEmail.validate(username, {errorLevel: false}) == true) user = await User.findOne({ email: username });
-  else user = await User.findOne({username})
+  let user
+  if (isEmail.validate(username, { errorLevel: false }) == true) user = await User.findOne({ email: username });
+  else user = await User.findOne({ username })
   if (!user) {
     return res.status(400).send('User doesn\'t exist');
   }
@@ -59,7 +67,7 @@ export const login = async (req, res) => {
 };
 
 
-export const logout  = (req, res) => {
+export const logout = (req, res) => {
   res.clearCookie('jwt')
   res.status(200).send('Log out successful');
 };
