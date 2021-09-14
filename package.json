@@ -1,0 +1,23 @@
+{
+  "name": "endgame",
+  "version": "1.0.0",
+  "description": "endgame_log",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open", 
+    "build": "webpack --mode production",
+    "dev": "nodemon index.js",
+    "test": "echo\"Error:no tets specifiend\"%% exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Artem",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  }
+}
