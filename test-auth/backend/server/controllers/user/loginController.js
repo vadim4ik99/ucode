@@ -33,9 +33,10 @@ export const signUp = async (req, res) => {
 
   //send email link token
   let token_mail_verification = addJwtCookie(res, user._id);
+//let token_mail_verification ='dfsdfs32';
   let link = `Clik on link to continued registration http://localhost:5000/users/verify?"${token_mail_verification}`;
   let linkhtml = `Clik on link to continued registration <a href src="localhost:5000/users/verify?id=${token_mail_verification}">Link</a><br>
-  Clik on link to continued registration http://localhost:5000/verify?id=${token_mail_verification}`;
+  Clik on link to continued registration http://localhost:5000/users/verify?id=${token_mail_verification}`;
   mailto(email, link, linkhtml);
 
   //addJwtCookie(res, user._id)

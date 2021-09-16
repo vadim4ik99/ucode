@@ -22,7 +22,8 @@ export async function getAllUsers(req, res) {
 };
 
 export async function activeUser(req, res) {
-    let token = req.query.id
+    let token = req.query.id;
+    console.log(token);
     if (token) {
         res.send('Verify done success')
     }
