@@ -22,10 +22,14 @@ export async function getAllUsers(req, res) {
 };
 
 export async function activeUser(req, res) {
-    let token = req.query.id;
+    let token = req.query.id
+    let token_cookie = req.cookies.jwt;
     console.log(token);
-    if (token) {
-        res.send('Verify done success')
+    console.log(token_cookie);
+    if (token == token_cookie) {
+        let id = req.decoded.id;
+        await User.findByIdAndUpdate(id, { $set: { active: true } });
+        res.send('Verify done success');
     }
 
     else { res.send('Token dont match') }
