@@ -60,10 +60,20 @@ export const login = async (req, res) => {
   if (!isMatch) {
     return res.status(401).send('Password incorrect');
   }
+  
+   //check status active
+  const statusUser = user.active;
+  if(statusUser == false) {
+    res.status(401).send('User not activeted');
+  }
+  else{
+    addJwtCookie(res, user._id)
 
-  addJwtCookie(res, user._id)
+    res.status(200).send('Log in successful')
+  }
 
-  res.status(200).send('Log in successful')
+
+ 
 };
 
 
